@@ -9,6 +9,7 @@ Public Class Reg01
 
 
 
+
     'Public Sub New()
     '
     'End Sub
@@ -23,6 +24,12 @@ Public Class Reg01
         register01.RemoveAt(0)
         Return temp
     End Function
+
+    Public Sub Clear(display As TextBox)
+        register01.Clear()
+        register02.Clear()
+        display.Text = "0"
+    End Sub
 
 
     Public Sub Print(display As TextBox)
@@ -92,6 +99,7 @@ Public Class Reg01
 
     Public Sub Init()
         register01 = New List(Of String)(register02)
+        register02.Clear()
     End Sub
 
     Public Function IsEmpty() As Boolean

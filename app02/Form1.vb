@@ -29,7 +29,7 @@
     End Sub
 
 
-    Private Sub Equal_Clisk(sender As Object, e As EventArgs) Handles equal.Click
+    Private Sub Equal_Click(sender As Object, e As EventArgs) Handles equal.Click
         'Dim ret As String
         Dim calc As Calculate = New Calculate()
 
@@ -40,9 +40,8 @@
         While Not reg01.IsEmpty
             temp = reg01.Pick()
             If temp.Equals("×") Or temp.Equals("÷") Then
-                reg01.debugPrint()
+                'reg01.debugPrint()
                 calc.SetValues(reg01.GetOp1, temp, reg01.GetOp2)
-                'ret = calc.Calc()
                 reg01.Store(calc.Calc())
             Else
                 reg01.Store(temp)
@@ -50,15 +49,32 @@
         End While
 
         reg01.Init()
-        'reg01.PrintEquation(debug1)
+        reg01.debugPrint()
+        'reg01.Print(debug01)
+
+        ' No.2 add and sub
+        While Not reg01.IsEmpty
+            temp = reg01.Pick()
+            If temp.Equals("＋") Or temp.Equals("－") Then
+                'reg01.debugPrint()
+                calc.SetValues(reg01.GetOp1, temp, reg01.GetOp2)
+                reg01.Store(calc.Calc())
+            Else
+                reg01.Store(temp)
+            End If
+        End While
+
+        reg01.Init()
         reg01.Print(debug01)
-
-
-        'reg01.Store(reg01.Pick())
-        'reg01.debugPrint()
 
 
 
 
     End Sub
+
+    Private Sub AC_Click(sender As Object, e As EventArgs) Handles ac.Click
+        reg01.Clear(debug01)
+        regNum.Clear()
+    End Sub
+
 End Class
