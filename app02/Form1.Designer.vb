@@ -42,6 +42,10 @@ Partial Class Form1
         Me.multiple = New System.Windows.Forms.Button()
         Me.plus = New System.Windows.Forms.Button()
         Me.output = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ac = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'dot
@@ -59,7 +63,7 @@ Partial Class Form1
         Me.debug01.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.debug01.Location = New System.Drawing.Point(105, 91)
         Me.debug01.Name = "debug01"
-        Me.debug01.Size = New System.Drawing.Size(383, 49)
+        Me.debug01.Size = New System.Drawing.Size(486, 49)
         Me.debug01.TabIndex = 2
         Me.debug01.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -218,14 +222,55 @@ Partial Class Form1
         Me.output.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.output.Location = New System.Drawing.Point(105, 31)
         Me.output.Name = "output"
-        Me.output.Size = New System.Drawing.Size(383, 49)
+        Me.output.Size = New System.Drawing.Size(486, 49)
         Me.output.TabIndex = 18
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button1.Location = New System.Drawing.Point(511, 325)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(80, 60)
+        Me.Button1.TabIndex = 22
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button2.Location = New System.Drawing.Point(511, 239)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(80, 60)
+        Me.Button2.TabIndex = 21
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ac
+        '
+        Me.ac.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.ac.Location = New System.Drawing.Point(511, 156)
+        Me.ac.Name = "ac"
+        Me.ac.Size = New System.Drawing.Size(80, 60)
+        Me.ac.TabIndex = 20
+        Me.ac.Text = "AC"
+        Me.ac.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button4.Location = New System.Drawing.Point(511, 405)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(80, 60)
+        Me.Button4.TabIndex = 19
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(582, 491)
+        Me.ClientSize = New System.Drawing.Size(714, 491)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.ac)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.output)
         Me.Controls.Add(Me.minus)
         Me.Controls.Add(Me.divide)
@@ -268,4 +313,8 @@ Partial Class Form1
     Friend WithEvents multiple As Button
     Friend WithEvents plus As Button
     Friend WithEvents output As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents ac As Button
+    Friend WithEvents Button4 As Button
 End Class

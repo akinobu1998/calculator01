@@ -24,6 +24,12 @@ Public Class Reg01
         Return temp
     End Function
 
+    Public Sub Clear(display As TextBox)
+        register01.Clear()
+        register02.Clear()
+        display.Text = "0"
+    End Sub
+
 
     Public Sub Print(display As TextBox)
         Dim temp(50) As String
@@ -92,6 +98,7 @@ Public Class Reg01
 
     Public Sub Init()
         register01 = New List(Of String)(register02)
+        register02.Clear()
     End Sub
 
     Public Function IsEmpty() As Boolean
