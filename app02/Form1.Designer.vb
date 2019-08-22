@@ -24,6 +24,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.dot = New System.Windows.Forms.Button()
         Me.debug01 = New System.Windows.Forms.TextBox()
         Me.zero = New System.Windows.Forms.Button()
@@ -289,6 +290,7 @@ Partial Class Form1
         Me.Controls.Add(Me.zero)
         Me.Controls.Add(Me.debug01)
         Me.Controls.Add(Me.dot)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

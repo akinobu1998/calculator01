@@ -2,13 +2,23 @@
 ' save the equation and calcurate
 Public Class Reg01
     ' main register
+    Private regNum As String = ""
     Private register01 As List(Of String) = New List(Of String)
     ' temp register
     Private register02 As List(Of String) = New List(Of String)
-    Private equation As List(Of String) = New List(Of String)
+    'Private equation As List(Of String) = New List(Of String)
 
 
+    ' for numbr
 
+    Public Sub AppendNum(item As String)
+        regNum &= item
+    End Sub
+
+
+    Public Function GetNum() As String
+        Return regNum
+    End Function
 
     'Public Sub New()
     '
@@ -16,7 +26,7 @@ Public Class Reg01
 
     Public Sub Add(item As String)
         register01.Add(item)
-        equation.Add(item)
+        'equation.Add(item)
     End Sub
 
     Public Function Remove() As String
@@ -28,7 +38,12 @@ Public Class Reg01
     Public Sub Clear(display As TextBox)
         register01.Clear()
         register02.Clear()
+        regNum = ""
         display.Text = "0"
+    End Sub
+
+    Public Sub InitNum()
+        regNum = ""
     End Sub
 
 
@@ -44,7 +59,7 @@ Public Class Reg01
         display.Text = tempString
     End Sub
 
-    Public Sub Print(display As TextBox, regNum As RegNum)
+    Public Sub PrintNum(display As TextBox)
         Dim temp(50) As String
         Dim tempString As String = ""
         register01.CopyTo(temp, 0)
@@ -52,10 +67,22 @@ Public Class Reg01
         For Each item As String In temp
             tempString &= item
         Next
-        tempString &= regNum.getRegister()
+        tempString &= regNum
 
         display.Text = tempString
     End Sub
+    Public Sub PrintAnswer(display As TextBox)
+        Dim temp(50) As String
+        Dim tempString As String = ""
+
+        register01.CopyTo(temp, 0)
+        For Each item As String In temp
+            tempString &= item
+        Next
+
+        display.Text &= " = " & tempString
+    End Sub
+
 
     'Public Sub PrintEquation(display As TextBox, regNum As RegNum)
     '    'Dim temp(50) As String

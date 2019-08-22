@@ -2,7 +2,7 @@
     ' for the equation 
     Dim reg01 As Reg01 = New Reg01()
     ' to make number
-    Dim regNum As RegNum = New RegNum()
+    'Dim regNum As RegNum = New RegNum()
 
     'Private Sub Print_Stack(stack As Stack)
     '    Dim array As Array = stack.ToArray()
@@ -14,18 +14,18 @@
 
 
     Private Sub Num_Click(sender As Object, e As EventArgs) Handles zero.Click, one.Click, two.Click, three.Click, four.Click, five.Click, six.Click, seven.Click, eight.Click, nine.Click
-        regNum.Append(sender.Text)
-        debug01.Text = regNum.getRegister()
-        reg01.Print(debug01, regNum)
+        reg01.AppendNum(sender.Text)
+        debug01.Text = reg01.GetNum()
+        reg01.PrintNum(debug01)
     End Sub
 
     Private Sub Ope_Click(sender As Object, e As EventArgs) Handles plus.Click, minus.Click, divide.Click, multiple.Click
         ' number
-        reg01.Add(regNum.getRegister())
+        reg01.Add(reg01.GetNum())
         ' operator
         reg01.Add(sender.Text)
         reg01.Print(debug01)
-        regNum.Clear()
+        reg01.InitNum()
     End Sub
 
 
@@ -33,7 +33,9 @@
         'Dim ret As String
         Dim calc As Calculate = New Calculate()
 
-        reg01.Add(regNum.getRegister())
+        reg01.Add(reg01.GetNum())
+
+        reg01.Print(debug01)
 
         ' No.1 mul and div
         Dim temp As String
@@ -65,7 +67,7 @@
         End While
 
         reg01.Init()
-        reg01.Print(debug01)
+        reg01.PrintAnswer(debug01)
 
 
 
@@ -74,7 +76,7 @@
 
     Private Sub AC_Click(sender As Object, e As EventArgs) Handles ac.Click
         reg01.Clear(debug01)
-        regNum.Clear()
     End Sub
+
 
 End Class
